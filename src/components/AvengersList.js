@@ -1,11 +1,12 @@
 import React from "react";
 import avengers from "../data";
+import { Link } from "react-router-dom";
 
 const TheList = avengers.map(avenger=> {
     return (
         <div className="character-card" key={avenger.id}>
-            <img src={avenger.thumbnail} />
-            <h2>{avenger.name}</h2>
+            <img src={avenger.thumbnail} alt={avengers.name}/>
+             <h2><Link to={`/avengers/${avenger.id}`}>{avenger.name}</Link></h2> 
             <p>({avenger.nickname})</p>
         </div>
     )
